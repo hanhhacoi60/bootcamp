@@ -5,6 +5,7 @@
 
 import requests
 from bs4 import BeautifulSoup
+from time import sleep
 from random import choice
 
 
@@ -69,6 +70,7 @@ class Quote:
             self._nav = self._page_soup.find(class_='next')
             if self._nav:
                 self._page_num += 1
+                sleep(1)
             else:
                 self._next_page = False
 
